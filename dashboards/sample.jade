@@ -1,0 +1,25 @@
+extends layout
+
+block title
+  | P2PU super sweet dashboard
+
+block content
+  div.gridster
+    ul
+      li(data-row='1', data-col='1', data-sizex='2', data-sizey='1')
+        div(data-id='welcome', data-view='Text', data-title='Hello', data-text='P2PU Dashboard.', data-moreinfo='Protip: You can drag the widgets around!')
+      
+      li(data-row='1', data-col='1', data-sizex='1', data-sizey='1')
+        div(data-id='courses_with_more_than_5_signups', data-view='Number', data-title='Courses with more than 5 signups')
+
+      li(data-row='1', data-col='1', data-sizex='1', data-sizey='1')
+        div(data-id='old_courses_with_more_than_5_signups', data-view='Number', data-title='Old Courses with more than 5 signups')
+
+      li(data-row='1', data-col='1', data-sizex='1', data-sizey='1')
+        div(data-id='old_courses_with_more_than_10_edits', data-view='Number', data-title='Old Courses with more than 10 edits')
+
+      li(data-row='1', data-col='1', data-sizex='1', data-sizey='1')
+        div(data-id='courses_with_more_than_10_edits', data-view='Number', data-title=' Courses with more than 10 edits')
+
+    center
+      div(style='font-size: 12px') Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' -H "Content-Type: application/json" http://#{request.header('host')}/widgets/welcome
